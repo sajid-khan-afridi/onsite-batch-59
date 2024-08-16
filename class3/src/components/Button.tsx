@@ -5,10 +5,10 @@ interface Props {
   text?: string;
 }
 
-const Button = (props: Props) => {
-  console.log(props);
-  console.log(props.text);
-  const { text } = props;
+const Button = ({ text = "ADD" }: Props) => {
+  // console.log(props);
+  // console.log(props.text);
+  // const { text } = props;
   return (
     <button
       onClick={() => console.log("click")}
