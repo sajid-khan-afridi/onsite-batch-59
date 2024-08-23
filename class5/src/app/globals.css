@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer utilities {
+  .title {
+    @apply text-6xl font-bold;
+  }
+  .subtitle {
+    @apply text-4xl font-semibold;
+  }
+  .subsubtitle {
+    @apply text-lg font-medium italic;
+  }
+}
+@layer base {
+  .title {
+    @apply text-9xl font-bold;
+  }
+  .subtitle {
+    @apply text-4xl font-semibold;
+  }
+  .subsubtitle {
+    @apply text-lg font-medium italic;
+  }
+} */
+.title {
+  @apply text-6xl font-bold bg-yellow-200 bg-red-300;
+}
+.subtitle {
+  @apply text-4xl font-semibold;
+}
+.subsubtitle {
+  @apply text-lg font-medium italic;
+}
