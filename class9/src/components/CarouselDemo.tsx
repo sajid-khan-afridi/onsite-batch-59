@@ -1,0 +1,47 @@
+import * as React from "react";
+
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Image from "next/image";
+
+export function CarouselDemo() {
+  const images = [
+    "/image1.jpg", // Replace with the correct image path
+    "/image2.jpg", // Replace with the correct image path
+    "/image3.jpg", // Replace with the correct image path
+    "/image4.jpg", // Replace with the correct image path
+    "/image5.jpg", // Replace with the correct image path
+  ];
+  return (
+    <Carousel className="w-full max-w-xs">
+      <CarouselContent>
+        {images.map((src, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  {/* <span className="text-4xl font-semibold">{index + 1}</span> */}
+                  <Image
+                    src={src}
+                    alt={`Carousel Image ${index + 1}`}
+                    width={300} // Adjust the width and height as needed
+                    height={300}
+                    className="object-cover w-[200px] h-[300px]" // Ensure the image covers the area
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+  );
+}
