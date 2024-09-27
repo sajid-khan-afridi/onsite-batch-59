@@ -526,11 +526,3 @@ By following these steps, you've:
 ---
 
 **Happy Coding!**
-
-```
-
-```
-
-```
-
-```
