@@ -249,44 +249,75 @@ In your Sanity project, you'll need to define schemas for your data models.
 
 - **Instructions:**
 
-  - Place these files in the `schemas` directory of your Sanity project.
+  - Place these files in the `sanity/schemaTypes` directory of your Sanity project.
   - Define the fields for each schema as per your data requirements.
-  - In your `index.ts` file within the `schemas` directory, import both `product.ts` and `category.ts`.
+  - In your `index.ts` file within the `schemaTypes` directory, import both `product.ts` and `category.ts`.
 
 - **Schema Definitions:**
 
   **`product.ts`:**
 
   ```typescript
-  export default {
-    name: "product",
-    title: "Product",
-    type: "document",
-    fields: [
-      { name: "title", title: "Title", type: "string" },
-      { name: "type", title: "Type", type: "string" },
-      { name: "price", title: "Price", type: "number" },
-      { name: "image", title: "Image", type: "image" },
-      {
-        name: "category",
-        title: "Category",
-        type: "reference",
-        to: [{ type: "category" }],
-      },
-    ],
-  };
+  import { defineField } from "sanity";
   ```
 
-  **`category.ts`:**
+export const products = {
+name: "product",
+title: "Product",
+type: "document",
+fields: [
+{
+name: "title",
+title: "Title",
+type: "string",
+},
+{
+name: "type",
+title: "Type",
+type: "string",
+},
+defineField({
+name: "price",
+type: "number",
+title: "Price",
+}),
+defineField({
+name: "image",
+title: "Image",
+type: "image",
+}),
+defineField({
+name: "category",
+type: "reference",
+title: "Enter the category",
+to: {
+type: "category",
+},
+}),
+],
+};
 
-  ```typescript
-  export default {
-    name: "category",
-    title: "Category",
-    type: "document",
-    fields: [{ name: "name", title: "Name", type: "string" }],
-  };
-  ```
+````
+
+**`category.ts`:**
+
+```typescript
+import { defineField, defineType } from "sanity";
+
+export const category = defineType({
+  name: "category",
+  type: "document",
+  title: "category",
+  fields: [
+    defineField({
+      name: "name",
+      title: "Enter Category",
+      type: "string",
+    }),
+  ],
+});
+
+````
 
 ---
 
