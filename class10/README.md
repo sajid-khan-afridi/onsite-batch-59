@@ -259,52 +259,52 @@ In your Sanity project, you'll need to define schemas for your data models.
 
   ```typescript
   import { defineField } from "sanity";
+  export const products = {
+    name: "product",
+    title: "Product",
+    type: "document",
+    fields: [
+      {
+        name: "title",
+        title: "Title",
+        type: "string",
+      },
+      {
+        name: "type",
+        title: "Type",
+        type: "string",
+      },
+      defineField({
+        name: "price",
+        type: "number",
+        title: "Price",
+      }),
+      defineField({
+        name: "image",
+        title: "Image",
+        type: "image",
+      }),
+      defineField({
+        name: "category",
+        type: "reference",
+        title: "Enter the category",
+        to: {
+          type: "category",
+        },
+      }),
+    ],
+  };
   ```
-
-export const products = {
-name: "product",
-title: "Product",
-type: "document",
-fields: [
-{
-name: "title",
-title: "Title",
-type: "string",
-},
-{
-name: "type",
-title: "Type",
-type: "string",
-},
-defineField({
-name: "price",
-type: "number",
-title: "Price",
-}),
-defineField({
-name: "image",
-title: "Image",
-type: "image",
-}),
-defineField({
-name: "category",
-type: "reference",
-title: "Enter the category",
-to: {
-type: "category",
-},
-}),
-],
-};
 
 ````
 
 **`category.ts`:**
 
-```typescript
-import { defineField, defineType } from "sanity";
+  ```typescript
 
-export const category = defineType({
+  import { defineField, defineType } from "sanity";
+
+  export const category = defineType({
   name: "category",
   type: "document",
   title: "category",
@@ -317,7 +317,7 @@ export const category = defineType({
   ],
 });
 
-````
+```
 
 ---
 
@@ -530,3 +530,4 @@ By following these steps, you've:
 ---
 
 **Happy Coding!**
+````
