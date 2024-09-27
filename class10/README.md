@@ -296,28 +296,24 @@ In your Sanity project, you'll need to define schemas for your data models.
   };
   ```
 
-````
-
-**`category.ts`:**
+  **`category.ts`:**
 
   ```typescript
-
   import { defineField, defineType } from "sanity";
 
   export const category = defineType({
-  name: "category",
-  type: "document",
-  title: "category",
-  fields: [
-    defineField({
-      name: "name",
-      title: "Enter Category",
-      type: "string",
-    }),
-  ],
-});
-
-```
+    name: "category",
+    type: "document",
+    title: "category",
+    fields: [
+      defineField({
+        name: "name",
+        title: "Enter Category",
+        type: "string",
+      }),
+    ],
+  });
+  ```
 
 ---
 
@@ -330,6 +326,8 @@ Start the Sanity Studio to manage your content.
   ```bash
   npm run dev
   ```
+
+````
 
 - **Access the Studio:**
   - Open your browser and navigate to `http://localhost:3000/studio` to access the Sanity Studio interface.
@@ -530,4 +528,8 @@ By following these steps, you've:
 ---
 
 **Happy Coding!**
+
+```
+
+```
 ````
