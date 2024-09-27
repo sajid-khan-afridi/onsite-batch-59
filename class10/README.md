@@ -327,8 +327,6 @@ Start the Sanity Studio to manage your content.
   npm run dev
   ```
 
-````
-
 - **Access the Studio:**
   - Open your browser and navigate to `http://localhost:3000/studio` to access the Sanity Studio interface.
 
@@ -532,4 +530,7 @@ By following these steps, you've:
 ```
 
 ```
-````
+
+```
+
+```
