@@ -67,7 +67,7 @@ An API response typically includes various elements such as status codes, header
    }
    ```
 
-### **Organized Response Structure**
+### ** How API is called in Nextjs**
 
 #### **1. POST Request**
 
