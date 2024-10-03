@@ -27,6 +27,10 @@ An API (Application Programming Interface) serves as a bridge, allowing two or m
 
 - **Postman**: A popular tool for testing APIs. It helps developers visualize API requests and responses, making the development and debugging process easier.
 
+### REST API Testing with Postman
+
+[We will be using Simple Books REST APIs](https://github.com/vdespa/introduction-to-postman-course/blob/main/simple-books-api.md)
+
 ### API response
 
 An API response typically includes various elements such as status codes, headers, and a body containing the actual data. Here are some common API response components with brief explanations:
