@@ -337,4 +337,7 @@ With these steps, you have set up a full CRUD API using PostgreSQL with both SQL
 
 - [Todo App](https://orm.drizzle.team/docs/tutorials/drizzle-nextjs-neon)
 - [Drizzle Queries + CRUD](https://orm.drizzle.team/docs/data-querying)
--
+- [Vercel](https://vercel.com/docs/storage/vercel-postgres/quickstart)
+- [Vercel Drizzle](https://vercel.com/docs/storage/vercel-postgres/using-an-orm#drizzle)
+- [learn-nextjs/step11_route_handler/](https://github.com/panaverse/learn-nextjs/tree/main/step11_route_handler)
+- [learn-nextjs/step12_serverless_databases](https://github.com/panaverse/learn-nextjs/tree/main/step12_serverless_databases/relational)
