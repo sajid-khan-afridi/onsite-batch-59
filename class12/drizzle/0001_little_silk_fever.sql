@@ -1,0 +1,1 @@
+ALTER TABLE "todo15" ADD COLUMN "description" varchar(255);

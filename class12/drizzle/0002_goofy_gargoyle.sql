@@ -1,0 +1,1 @@
+ALTER TABLE "todo15" DROP COLUMN IF EXISTS "description";
