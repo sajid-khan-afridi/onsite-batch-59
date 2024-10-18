@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { MdDelete } from "react-icons/md";
 
 interface Todo {
   id: number;
@@ -28,6 +29,38 @@ const Page = () => {
       },
       body: JSON.stringify({
         title: input,
+      }),
+    });
+    const data = await res.json();
+    console.log(data);
+    getData();
+  }
+
+  // Delete data
+  async function handleDelete(id: number) {
+    const res = await fetch(`/api/crud`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: id }),
+    });
+    const data = await res.json();
+    console.log(data);
+    getData();
+  }
+
+  // Update data
+  async function handleUpdate(id: number, title: string, completed: boolean) {
+    const res = await fetch(`/api/crud`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: id,
+        title: title,
+        completed: !completed,
       }),
     });
     const data = await res.json();
@@ -67,7 +100,14 @@ const Page = () => {
             <li>Todo 2</li>
             <li>Todo 3</li> */}
             {todos.map((todo: Todo) => (
-              <li key={todo.id}>{todo.title}</li>
+              <li className="flex justify-between items-center" key={todo.id}>
+                {todo.title}
+                <input type="checkbox" checked={todo.completed} onChange={()=>handleUpdate(todo.id,todo.title,todo.completed)}/>
+                <MdDelete
+                  className="text-red-700 cursor-pointer"
+                  onClick={() => handleDelete(todo.id)}
+                />
+              </li>
             ))}
           </ul>
         </div>
